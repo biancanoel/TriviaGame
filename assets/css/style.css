@@ -1,0 +1,34 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 0.71)), url(flag.jpg)
+}
+
+h1, h3 {
+    color: white;
+    font-family: 'Boogaloo', cursive;}
+
+#main-box {
+    margin-top: 40px;
+    background: lemonchiffon;
+    border: solid 2px lavenderblush;
+    height: 400px;
+    position: relative;
+}
+
+#show-timer {
+    color: red;
+}
+
+.start-button {
+    width: 300px;
+    height: 50px;
+    border-radius: 4px;
+    background: rgb(210, 49, 31);
+    font-size: 190%;
+    font-family: 'Boogaloo', cursive;
+    color: white;
+    letter-spacing: 3px;
+    font-weight: bold;
+    position: absolute;
+    top: 150px;
+    left: 250px;
+}
