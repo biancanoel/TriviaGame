@@ -6,6 +6,11 @@ h1, h3 {
     color: white;
     font-family: 'Boogaloo', cursive;}
 
+h2 {
+    font-family: 'Boogaloo', cursive;
+    text-align: center;
+}
+
 #main-box {
     margin-top: 40px;
     background: lemonchiffon;
@@ -16,6 +21,7 @@ h1, h3 {
 
 #show-timer {
     color: red;
+    display: inline;
 }
 
 .start-button {
@@ -31,4 +37,22 @@ h1, h3 {
     position: absolute;
     top: 150px;
     left: 250px;
+}
+
+.question {
+    font-size: 140%;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin-bottom: 5%;
+
+}
+
+.answer-option, p {
+    font-size: 140%;
+    font-family: 'Montserrat';
+    line-height: 150%;
+    border: solid 2px red;
+    margin-top: 2.5%;
+    padding-left: 2%;
+
 }
