@@ -2,6 +2,7 @@ $(document).ready(function() {
 
     function start () {
         //Loads immediately 
+        $("#main-box").empty();
         var startButton = $("<button>")
         startButton.addClass("start-button")
         startButton.text("Westward Ho!")
@@ -19,7 +20,7 @@ $(document).ready(function() {
     start();
 
     //Game begins when user clicks the Start button
-    $(".start-button").on("click", function(){
+    $("#main-box").on("click", "button.start-button", function(){
         console.log("start clicked");
         $(".start-button").hide();
         nextQuestion(allQuestions[counter]);
@@ -86,7 +87,7 @@ $(document).ready(function() {
             clearInterval(intervalID);
             console.log("timer ran out!");
             $("#main-box").html("<h2> Sorry, the right answer was "+allQuestions[counter].correctAnswer+ "</h2>");
-            resultInterval= setTimeout(nextQuestion, 6000);
+            resultInterval= setTimeout(nextQuestion, 2000);
             counter++;
             if(counter>4) {
                 scoreboard();
@@ -169,11 +170,16 @@ $(document).ready(function() {
             clearInterval(resultInterval);
             clearInterval(intervalID);
 
-            var startButton = $("<button>")
-            startButton.addClass("start-button")
-            startButton.text("Replay Game!")
-            $("#main-box").append(startButton);
+            var restartButton = $("<button>")
+            restartButton.addClass("restart-button")
+            restartButton.text("Replay Game!")
+            $("#main-box").append(restartButton);
         }
+
+        $("#main-box").on("click", "button.restart-button", function(){
+
+            start();
+        })
 
     })
    

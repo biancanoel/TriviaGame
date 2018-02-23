@@ -1,7 +1,10 @@
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 0.71)), url(flag.jpg)
+    background-image: linear-gradient(rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 0.71)), url(flag.jpg);
+    background-size: cover;
+  
 }
 
+h1 {font-size: 350%;}
 h1, h3 {
     color: white;
     font-family: 'Boogaloo', cursive;}
@@ -24,7 +27,7 @@ h2 {
     display: inline;
 }
 
-.start-button {
+.start-button, .restart-button {
     width: 300px;
     height: 50px;
     border-radius: 4px;
