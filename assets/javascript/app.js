@@ -36,14 +36,14 @@ $(document).ready(function() {
     var question2={
         question:"The Statue of Libery was originally a gift from which country?",
         correctAnswer:  "France",
-        explanation: "Fun fact: France will drops rose petals June 6 over Lady Liberty to commemorate D-Day on Normandy Beach.",
+        explanation: "Fun fact: France drops rose petals June 6 over Lady Liberty to commemorate D-Day on Normandy Beach.",
         options: ["Canada", "United Kingdom", "France","Germany"],
     };    
 
     var question3={
         question:"What US president is best known for asking the question '...And so my fellow Americans: ask not what your country can do for you, ask what you can do for your country'?",
         correctAnswer:  "John F Kennedy",
-        explanation: "In the height of the Cold War, JFK delivered this impassionated speech calling Americans to rally together to defeat communism in his Inaugural speech on January 20, 1961",
+        explanation: "In the height of the Cold War, JFK delivered this impassionated speech calling Americans to rally together to defeat communism in his Inaugural address on January 20, 1961",
         options: ["Franklin Delano Roosevelt", "Andrew Jackson", "John F Kennedy","Jimmy Carter"],
     }; 
 
@@ -83,13 +83,11 @@ $(document).ready(function() {
 
         if (timer===0) {
             wrongAnswers++;
-            console.log("you've answered this many wrong:" +wrongAnswers);
             clearInterval(intervalID);
-            console.log("timer ran out!");
             $("#main-box").html("<h2> Sorry, the right answer was "+allQuestions[counter].correctAnswer+ "</h2>");
             resultInterval= setTimeout(nextQuestion, 2000);
             counter++;
-            if(counter>4) {
+            if(counter>=5) {
                 scoreboard();
     
             }
@@ -99,21 +97,20 @@ $(document).ready(function() {
     }
 
     function result() {
-        if (answerChosen===allQuestions[counter].correctAnswer) {
-            console.log("your answer is correct");
-            clearInterval(resultInterval);
+        $("#main-box").empty();
         
-            $("#main-box").empty();
+        
+        if (answerChosen===allQuestions[counter].correctAnswer) {;
+    
             $("#main-box").html("<h2> Correct Answer </h2>")
+            $("#show-timer").empty();
             clearInterval(intervalID);
             rightAnswers++;
-            console.log("you've answered this many right: "+rightAnswers);
+            
 
         }  
         else {
-            console.log("your answer was wrong");
-            
-            $("#main-box").empty();
+
             $("#main-box").html("<h2> Sorry, the right answer was "+allQuestions[counter].correctAnswer+ "</h2>");
             clearInterval(intervalID);
             wrongAnswers++;
@@ -124,7 +121,7 @@ $(document).ready(function() {
         counter++ ;
         
 
-        if(counter>4) {
+        if(counter>=5) {
             scoreboard();
         } else {
             resultInterval= setTimeout(nextQuestion, 6000);
@@ -177,7 +174,6 @@ $(document).ready(function() {
         }
 
         $("#main-box").on("click", "button.restart-button", function(){
-
             start();
         })
 
